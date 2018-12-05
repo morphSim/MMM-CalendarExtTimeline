@@ -18,7 +18,6 @@
   position:relative;
   width:100%;
   height:100%;
-
 }
 
 .CEXTML .eventPositionLine {
@@ -32,10 +31,11 @@
 .CEXTML .event {
   position:absolute;
   height:24px;
-  font-size:14px;
+  font-size:20px;
+  color: white;
   line-height:24px;
   overflow:hidden;
-  padding-left:6px;
+  padding-left:10px;
   text-align:left;
 }
 
@@ -100,5 +100,4 @@
   font-size:initial;
   border-bottom:1px solid #999;
   background-color:#333;
-
 }

@@ -56,8 +56,8 @@ Module.register("MMM-CalendarExtTimeline",{
 		)
 
 		var wrapper = document.createElement("div")
-		wrapper.className = "CALEXT CEXTML timeline"
-		wrapper.id = "CALEXT_TIMELINE"
+		wrapper.className = "CEXTML CEXTML timeline"
+		wrapper.id = "CEXTML_TIMELINE"
 		var frameTable = document.createElement("table")
 		frameTable.className = "frameTable"
 
@@ -230,6 +230,7 @@ Module.register("MMM-CalendarExtTimeline",{
 				ev.style.width = width
 				ev.style.left = position
 				ev.innerHTML = e.title
+				ev.style.backgroundColor = e.color
 				if (e.startInView) {
 					ev.className += " startHere"
 				}
