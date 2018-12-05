@@ -44,12 +44,12 @@ Module.register("MMM-CalendarExtTimeline",{
 	getDom: function() {
 		if (this.config.type == "dynamic") {
 			this.startTime = moment().startOf("hour")
-			this.endTime = moment().startOf("hour")
-				.add(this.config.end_hour, "hours").startOf("hour")
+			this.endTime = moment().startOf("hour").add(this.config.end_hour, "hours")
 		} else {
 			this.startTime = moment().hour(this.config.begin_hour).startOf("hour")
 			this.endTime = moment().hour(this.config.end_hour).startOf("hour")
 		}
+		
 		this.hour_diff_sec = Math.round(
 			this.endTime.diff(this.startTime, "seconds")
 			/ this.config.time_display_section_count
@@ -268,8 +268,8 @@ Module.register("MMM-CalendarExtTimeline",{
 	updateRequest: function() {
 		var filter = {
 		  names: this.names,
-			from: moment().startOf('day').format('x'),
-		  to: moment().endOf('day').format('x'),
+			from: this.startTime.format('x'),
+		  to: this.endTime.format('x'),
 		  count: 100
 		}
 		var payload = {
